@@ -1,0 +1,6 @@
+- step:
+    name: preprocess
+    image: docker.io/python:3.10
+    command:
+        - lscpu
+        - python data-preprocess.py
