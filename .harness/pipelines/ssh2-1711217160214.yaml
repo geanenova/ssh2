@@ -58,6 +58,7 @@ pipeline:
                   onRetryFailure:
                     action:
                       type: Ignore
+        timeout: 30d
     - stage:
         name: test
         identifier: test
