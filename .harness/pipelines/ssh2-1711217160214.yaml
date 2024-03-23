@@ -81,3 +81,4 @@ pipeline:
                     outputVariables: []
                   timeout: 10m
         tags: {}
+  timeout: 4w 2d
