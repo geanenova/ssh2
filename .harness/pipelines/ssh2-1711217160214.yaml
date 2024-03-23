@@ -22,6 +22,7 @@ pipeline:
                   name: echo
                   spec:
                     shell: Bash
+                    command: lscpu
                   timeout: ""
                   type: Run
               - step:
