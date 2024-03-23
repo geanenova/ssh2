@@ -45,3 +45,16 @@ pipeline:
             type: Cloud
             spec: {}
         type: CI
+        failureStrategies:
+          - onFailure:
+              errors:
+                - Timeout
+              action:
+                type: Retry
+                spec:
+                  retryCount: 30
+                  retryIntervals:
+                    - 3d
+                  onRetryFailure:
+                    action:
+                      type: Ignore
