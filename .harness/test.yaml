@@ -27,4 +27,7 @@ pipeline:
                     environmentVariables: []
                     outputVariables: []
                   timeout: 53w
+          environment:
+            environmentRef: sandboxenvppmzbpvwmpsrjqupoaxo
+            deployToAll: false
         tags: {}
