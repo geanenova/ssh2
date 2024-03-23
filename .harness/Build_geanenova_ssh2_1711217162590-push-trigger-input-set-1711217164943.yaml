@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_geanenova_ssh2_1711217162590-push-trigger-input-set
+  identifier: Build_geanenova_ssh2_1711217162590pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_geanenova_ssh2_1711217162590
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
