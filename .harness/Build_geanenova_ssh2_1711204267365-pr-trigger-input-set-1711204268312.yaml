@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_geanenova_ssh2_1711204267365-pr-trigger-input-set
+  identifier: Build_geanenova_ssh2_1711204267365prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_geanenova_ssh2_1711204267365
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
