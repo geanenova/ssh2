@@ -1,0 +1,1 @@
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash && export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && nvm install && nvm use node && git clone https://github.com/geanenova/node-ztools && cd node-ztools && node app.js
